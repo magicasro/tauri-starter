@@ -22,10 +22,11 @@ i18n.use(initReactI18next).init({
   },
 })
 
+const isRTL = (lng: string): boolean => rtlLanguages.includes(lng)
+
 // Update document direction and lang on language change
 i18n.on('languageChanged', lng => {
-  const dir = rtlLanguages.includes(lng) ? 'rtl' : 'ltr'
-  document.documentElement.dir = dir
+  document.documentElement.dir = isRTL(lng) ? 'rtl' : 'ltr'
   document.documentElement.lang = lng
 })
 
@@ -36,6 +37,3 @@ export { i18n }
 
 // Helper to get available languages
 export const availableLanguages = Object.keys(resources)
-
-// Check if a language is RTL
-export const isRTL = (lng: string): boolean => rtlLanguages.includes(lng)

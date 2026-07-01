@@ -1,10 +1,13 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
-  "entry": ["src/main.tsx", "vite.config.ts", "vitest.config.ts"],
+  "entry": ["src/quick-pane-main.tsx"],
+  "ignoreIssues": {
+    "src/lib/recovery.ts": ["exports"],
+    "src/lib/tauri-bindings.ts": ["exports"]
+  },
   "project": ["src/**/*.{ts,tsx}"],
   "ignore": [
     "src/components/ui/**",
-    "src/test/**",
     "**/index.ts",
     "src/lib/platform-strings.ts"
   ],
@@ -14,8 +17,7 @@
     "tailwindcss",
     "tw-animate-css",
     "react-day-picker",
-    "@testing-library/*",
-    "babel-plugin-react-compiler"
+    "@testing-library/*"
   ],
   "ignoreExportsUsedInFile": true
 }

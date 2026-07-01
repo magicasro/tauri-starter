@@ -127,8 +127,8 @@ The title bar system uses platform detection to render appropriate controls:
 
 ```
 TitleBar.tsx (router)
-├── macOS: MacOSWindowControls (left) + TitleBarContent
-├── Windows: TitleBarContent + WindowsWindowControls (right)
+├── macOS: MacOSWindowControls (left) + toolbar actions + title
+├── Windows: toolbar actions + title + WindowsWindowControls (right)
 └── Linux: LinuxTitleBar (toolbar only, no window controls)
 ```
 
