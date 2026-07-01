@@ -57,7 +57,9 @@ function App() {
     })
 
     if (!UPDATER_ENABLED) {
-      logger.debug('Auto-updater disabled (set VITE_ENABLE_UPDATER=true after GitHub releases are configured)')
+      logger.debug(
+        'Auto-updater disabled (set VITE_ENABLE_UPDATER=true after GitHub releases are configured)'
+      )
       return
     }
 
